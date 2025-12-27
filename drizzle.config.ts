@@ -1,12 +1,12 @@
 import { defineConfig } from "drizzle-kit";
-import { getEnvOrThrow } from "./src/utils";
+import { env } from "./src/config";
 
 export default defineConfig({
 	out: "./drizzle",
 	schema: "./src/db/schema.ts",
 	dialect: "turso",
 	dbCredentials: {
-		url: getEnvOrThrow("TURSO_DATABASE_URL"),
-		authToken: getEnvOrThrow("TURSO_AUTH_TOKEN"),
+		url: env.TURSO_DATABASE_URL,
+		authToken: env.TURSO_AUTH_TOKEN,
 	},
 });

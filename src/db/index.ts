@@ -1,11 +1,11 @@
 import { createClient } from "@libsql/client";
 import { drizzle } from "drizzle-orm/libsql";
-import { getEnvOrThrow } from "../utils";
+import { env } from "../config";
 import * as schema from "./schema";
 
 const client = createClient({
-	url: getEnvOrThrow("TURSO_DATABASE_URL"),
-	authToken: getEnvOrThrow("TURSO_AUTH_TOKEN"),
+	url: env.TURSO_DATABASE_URL,
+	authToken: env.TURSO_AUTH_TOKEN,
 });
 
 export const db = drizzle(client, { schema });

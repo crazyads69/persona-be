@@ -21,7 +21,7 @@ export const users = sqliteTable(
 	{
 		...baseFields,
 
-		clerkUserId: text("clerk_user_id").notNull().unique(),
+		firebaseUid: text("firebase_uid").notNull().unique(), // Changed from clerkUserId
 		email: text("email").notNull().unique(),
 		username: text("username").notNull().unique(),
 		displayName: text("display_name"),
@@ -29,7 +29,7 @@ export const users = sqliteTable(
 		bio: text("bio"),
 	},
 	(table) => [
-		index("idx_users_clerk_user_id").on(table.clerkUserId),
+		index("idx_users_firebase_uid").on(table.firebaseUid),
 		index("idx_users_email").on(table.email),
 		index("idx_users_username").on(table.username),
 		index("idx_users_deleted_at").on(table.deletedAt),
