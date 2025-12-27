@@ -1,0 +1,7 @@
+# deps
+node_modules/
+
+# dotenv environment variables files
+.env
+.env.local
+
