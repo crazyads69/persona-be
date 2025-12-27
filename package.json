@@ -12,7 +12,10 @@
     "db:push": "drizzle-kit push"
   },
   "dependencies": {
+    "@hono/zod-validator": "^0.7.6",
     "@libsql/client": "^0.15.15",
+    "@upstash/qstash": "^2.8.4",
+    "@upstash/redis": "^1.36.0",
     "dotenv": "^17.2.3",
     "drizzle-orm": "^0.45.1",
     "firebase-admin": "^13.6.0",
